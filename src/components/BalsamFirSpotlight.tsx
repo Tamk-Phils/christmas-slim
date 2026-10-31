@@ -15,7 +15,7 @@ export const BalsamFirSpotlight: React.FC<BalsamFirSpotlightProps> = ({ products
 
   return (
     <section className="tree-spotlight-section" style={{ padding: '4.5rem 1rem', background: '#ffffff', borderTop: '1px solid #eaeaea', borderBottom: '1px solid #eaeaea' }}>
-      <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
+      <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'center' }}>
         {/* Real Tree Image */}
         <div style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', boxShadow: '0 12px 36px rgba(0,0,0,0.08)' }}>
           <img

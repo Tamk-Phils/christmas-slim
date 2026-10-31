@@ -96,7 +96,7 @@ export const CustomerSupportPage: React.FC = () => {
               Every artificial Christmas tree purchased directly from Balsam Hill includes our comprehensive 3-Year Limited Warranty against manufacturer defects.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
               <div style={{ background: '#faf7f2', padding: '1.5rem', borderRadius: 8, borderLeft: '4px solid var(--color-forest)' }}>
                 <h4 style={{ color: '#143d2f', margin: '0 0 0.5rem', fontSize: '1.1rem' }}>Tree Frame &amp; Foliage</h4>
                 <p style={{ color: '#666', fontSize: '0.9rem', lineHeight: 1.5, margin: 0 }}>
@@ -304,7 +304,7 @@ export const CustomerSupportPage: React.FC = () => {
               Our seasonal specialists in California are available 7 days a week to help with orders, styling recommendations, and warranty service.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1.5rem' }}>
               <div style={{ background: '#faf7f2', padding: '2rem', borderRadius: 8, border: '1px solid #ebd9c0' }}>
                 <Phone size={28} color="var(--color-forest)" style={{ marginBottom: '1rem' }} />
                 <h3 style={{ color: '#143d2f', margin: '0 0 0.5rem' }}>Toll-Free Phone</h3>

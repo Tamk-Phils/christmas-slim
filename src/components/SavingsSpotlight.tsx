@@ -17,8 +17,8 @@ export const SavingsSpotlight: React.FC = () => {
           <Tag size={13} />
           <span>Limited-Time Holiday Event</span>
         </div>
-        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: 600, margin: '0 0 0.5rem', letterSpacing: '0.01em' }}>
-          Stack the Savings: <span style={{ whiteSpace: 'nowrap' }}>Limited-Time Offer</span>
+        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 5vw, 2.5rem)', fontWeight: 600, margin: '0 0 0.5rem', letterSpacing: '0.01em', lineHeight: 1.2 }}>
+          Stack the Savings: Limited-Time Offer
         </h2>
         <p style={{ fontSize: '1.15rem', opacity: 0.95, margin: '0 0 1.25rem' }}>
           Extra $50 off <strong>orders $750+</strong> with guaranteed holiday delivery.

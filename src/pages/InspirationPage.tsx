@@ -61,7 +61,7 @@ export const InspirationPage: React.FC<InspirationPageProps> = ({ posts, product
               boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
               border: '1px solid #ebd9c0',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               marginBottom: '3.5rem'
             }}
           >
@@ -120,7 +120,7 @@ export const InspirationPage: React.FC<InspirationPageProps> = ({ posts, product
           Recent Design Articles &amp; Styling Guides
         </h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', marginBottom: '4rem' }}>
           {posts.slice(1).map(post => (
             <div
               key={post.id}

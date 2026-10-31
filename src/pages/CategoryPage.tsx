@@ -410,7 +410,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ products }) => {
                 </button>
               </div>
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.75rem' }}>
+              <div className="category-product-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: '1.25rem' }}>
                 {filteredProducts.map(product => {
                   const currentHeightIdx = selectedHeights[product.id] ?? (product.selectedHeightIndex || 0);
                   const currentVariant = product.heights[currentHeightIdx] || product.heights[0];

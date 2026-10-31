@@ -109,6 +109,10 @@ body[data-glow-mode="night"] {
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+  position: relative;
 }
 
 body {
@@ -118,8 +122,21 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+  position: relative;
   transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+#root,
+.site-header,
+.site-main-content,
+.site-footer {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  position: relative;
 }
 
 img, video {
@@ -162,8 +179,10 @@ ul, ol {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 999;
   opacity: 0.75;
@@ -1514,7 +1533,7 @@ ul, ol {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
 }
 
@@ -2100,8 +2119,10 @@ ul, ol {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   z-index: 2000;
@@ -2262,8 +2283,10 @@ ul, ol {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
   z-index: 2100;
@@ -2385,15 +2408,59 @@ ul, ol {
 }
 
 /* --------------------------------------------------------------------------
+   SALES & ANNOUNCEMENT BANNERS
+   -------------------------------------------------------------------------- */
+.top-sales-banner {
+  background: #88631b;
+  color: #ffffff;
+  padding: 0.45rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  width: 100%;
+}
+
+.top-sales-banner-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.sales-banner-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sales-banner-tag {
+  background: rgba(0, 0, 0, 0.28);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sales-banner-link {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE DESIGN (TABLET & MOBILE)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .header-main-inner {
-    grid-template-columns: auto 1fr auto;
-    gap: 0.75rem;
-  }
   .site-nav {
-    display: none; /* Switch to slide-in mobile navigation drawer on tablet & mobile */
+    display: none !important; /* Switch to slide-in mobile navigation drawer */
   }
   .mobile-menu-toggle-btn {
     display: flex !important;
@@ -2418,28 +2485,164 @@ ul, ol {
 }
 
 @media (max-width: 768px) {
-  .top-promo-bar {
-    display: none;
+  /* Prevent horizontal scrolling universally on all mobile viewports */
+  html, body, #root, .site-header, .site-main-content, .site-footer {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: clip !important;
   }
+
+  .container {
+    padding: 0 0.85rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Top Announcement Bars on Mobile: Sleek single-line bar */
+  .desktop-only-marquee,
+  .top-marquee-bar,
   .utility-bar {
-    display: none;
+    display: none !important;
   }
+
+  .top-sales-banner {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.78rem !important;
+  }
+  .top-sales-banner-inner {
+    gap: 0.5rem !important;
+    justify-content: center !important;
+  }
+  .sales-banner-tag {
+    display: none !important; /* Conceal secondary tag on narrow mobile to keep 1 clean line */
+  }
+  .sales-banner-link {
+    font-size: 0.78rem !important;
+  }
+
+  /* Header Layout on Mobile */
+  .header-main {
+    padding: 0.65rem 0 !important;
+  }
+  .header-main-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .mobile-menu-toggle-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+
+  .brand-logo-wrap {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+  }
+  .brand-logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .brand-logo-img {
+    height: 24px !important;
+    max-width: 145px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
   .desktop-only-search {
     display: none !important;
   }
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    flex-shrink: 0 !important;
+  }
   .mobile-search-btn {
     display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    background: transparent !important;
   }
   .hide-on-small-mobile {
     display: none !important;
   }
-  .brand-logo-img {
-    height: 30px !important;
+
+  .cart-action-btn {
+    padding: 0.45rem !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  .header-main-inner {
-    grid-template-columns: auto 1fr auto;
-    gap: 0.5rem;
+  .cart-btn-label {
+    display: none !important;
   }
+
+  /* Hero Section on Mobile */
+  .hero-slider-section {
+    min-height: 480px !important;
+  }
+  .hero-slide-content {
+    padding: 2.5rem 0 !important;
+    max-width: 100% !important;
+  }
+  .hero-eyebrow {
+    font-size: 0.68rem !important;
+    padding: 0.25rem 0.6rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .hero-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.3rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .hero-description {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .hero-actions {
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.82rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .hero-controls {
+    right: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 0.75rem !important;
+  }
+
+  /* Grids & Cards on Mobile */
   .trust-grid {
     grid-template-columns: 1fr;
   }
@@ -2461,21 +2664,20 @@ ul, ol {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem !important;
-  }
-  .catalog-grid {
+  .product-grid,
+  .products-grid,
+  .catalog-grid,
+  .category-product-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.75rem !important;
   }
 }
 
-@media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .catalog-grid {
+@media (max-width: 540px) {
+  .product-grid,
+  .products-grid,
+  .catalog-grid,
+  .category-product-grid {
     grid-template-columns: 1fr !important;
   }
   .ugc-grid {
@@ -2490,7 +2692,7 @@ ul, ol {
   display: none;
   background: transparent;
   border: none;
-  color: var(--color-forest);
+  color: #ffffff;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 4px;

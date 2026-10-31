@@ -85,7 +85,7 @@ export const CartPage: React.FC = () => {
             </Link>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'start' }}>
             {/* Items Table */}
             <div style={{ background: '#ffffff', borderRadius: 8, border: '1px solid #ebd9c0', overflow: 'hidden' }}>
               <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #eee', fontWeight: 700, color: '#143d2f', background: '#faf7f2' }}>

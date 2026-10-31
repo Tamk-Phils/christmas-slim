@@ -40,19 +40,19 @@ export const PromoBar: React.FC = () => {
 
   return (
     <>
-      {/* Top Grey Marquee Banner */}
-      <div className="top-marquee-bar" style={{ background: '#444', color: '#fff', fontSize: '0.75rem', padding: '0.35rem 1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+      {/* Top Grey Marquee Banner - Desktop only */}
+      <div className="top-marquee-bar desktop-only-marquee" style={{ background: '#383838', color: '#fff', fontSize: '0.75rem', padding: '0.35rem 1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <span><strong>Holiday Sale:</strong> Save Now with Free Ground Shipping on Everything!</span>
-            <span className="hide-on-mobile" style={{ opacity: 0.8 }}>•</span>
-            <span className="hide-on-mobile">Buy Now, Pay Later with PayPal</span>
-            <span className="hide-on-mobile" style={{ opacity: 0.8 }}>•</span>
-            <span>
-              EXTRA $50 off orders $750+ with code:{' '}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'nowrap' }}>
+            <span><strong>Holiday Sale:</strong> Free Ground Shipping on Everything!</span>
+            <span style={{ opacity: 0.5 }}>•</span>
+            <span>Buy Now, Pay Later with PayPal</span>
+            <span style={{ opacity: 0.5 }}>•</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+              EXTRA $50 off $750+ code:{' '}
               <button 
                 onClick={copyCode} 
-                style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', border: '1px dashed #fff', padding: '0.1rem 0.4rem', borderRadius: 3, fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 4 }}
+                style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', border: '1px dashed #fff', padding: '0.1rem 0.4rem', borderRadius: 3, fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 4 }}
                 title="Click to copy HURRY50"
               >
                 HURRY50 <Copy size={11} />
@@ -60,8 +60,8 @@ export const PromoBar: React.FC = () => {
             </span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div className="hide-on-mobile" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.72rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexShrink: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.72rem' }}>
               <span>Ends in:</span>
               <span style={{ background: '#222', padding: '0.1rem 0.3rem', borderRadius: 2 }}>{timeLeft.hours}h</span>:
               <span style={{ background: '#222', padding: '0.1rem 0.3rem', borderRadius: 2 }}>{timeLeft.mins}m</span>:
@@ -79,16 +79,18 @@ export const PromoBar: React.FC = () => {
         </div>
       </div>
 
-      {/* Gold Sales Banner */}
-      <div className="top-sales-banner" style={{ background: '#88631b', color: '#ffffff', padding: '0.55rem 1rem', textAlign: 'center', fontSize: '0.88rem', fontWeight: 600, letterSpacing: '0.02em' }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-          <span>Save up to 40% + Free Shipping on All Christmas Trees &amp; Decor</span>
-          <span style={{ background: 'rgba(0,0,0,0.25)', padding: '0.2rem 0.6rem', borderRadius: '3px', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      {/* Gold Sales Banner - Compact and responsive */}
+      <div className="top-sales-banner">
+        <div className="container top-sales-banner-inner">
+          <span className="sales-banner-text">
+            <strong>Holiday Sale:</strong> Save up to 40% + Free Shipping
+          </span>
+          <span className="sales-banner-tag">
             Ends Tomorrow
           </span>
           <Link 
             to="/category/sale" 
-            style={{ color: '#fff', textDecoration: 'underline', fontWeight: 700, fontSize: '0.85rem' }}
+            className="sales-banner-link"
           >
             Shop Sale &rarr;
           </Link>

@@ -122,7 +122,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }
       </div>
 
       <div className="container" style={{ maxWidth: '1240px', margin: '2.5rem auto 0', padding: '0 1rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '3.5rem', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem', alignItems: 'start' }}>
           {/* Left Column: Image Gallery */}
           <div>
             {/* Main Big Photo */}

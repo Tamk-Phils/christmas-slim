@@ -170,9 +170,9 @@ export const CheckoutPage: React.FC = () => {
       </div>
 
       <div className="container" style={{ maxWidth: '1100px', margin: '3rem auto 0', padding: '0 1rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'start' }}>
           {/* Checkout Form */}
-          <form onSubmit={handlePlaceOrder} style={{ background: '#ffffff', borderRadius: 8, border: '1px solid #ebd9c0', padding: '2.5rem' }}>
+          <form onSubmit={handlePlaceOrder} style={{ background: '#ffffff', borderRadius: 8, border: '1px solid #ebd9c0', padding: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-forest)', marginBottom: '1.5rem', borderBottom: '1px solid #eee', paddingBottom: '0.75rem' }}>
               <Lock size={18} />
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', margin: 0 }}>

@@ -89,7 +89,7 @@ export const FlipTreePage: React.FC<FlipTreePageProps> = ({ products }) => {
           Available Flip Tree<sup>®</sup> Models
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
           {(flipTrees.length > 0 ? flipTrees : products.slice(0, 3)).map(tree => (
             <div
               key={tree.id}

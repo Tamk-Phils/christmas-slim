@@ -73,10 +73,10 @@ export const BranchSampleKitPage: React.FC = () => {
             borderRadius: 12,
             border: '1px solid #ebd9c0',
             boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
-            padding: '3rem',
+            padding: '1.5rem',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '2rem',
             alignItems: 'center',
             marginBottom: '4rem'
           }}
@@ -191,7 +191,7 @@ export const BranchSampleKitPage: React.FC = () => {
           </div>
 
           {/* Active Swatch Showcase Card */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center', background: '#faf7f2', padding: '2rem', borderRadius: 8 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '2rem', alignItems: 'center', background: '#faf7f2', padding: '1.5rem', borderRadius: 8 }}>
             <img
               src={swatches[activeSwatch].image}
               alt={swatches[activeSwatch].name}
@@ -234,7 +234,7 @@ export const BranchSampleKitPage: React.FC = () => {
           <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#143d2f', marginBottom: '1.5rem' }}>
             What Customers Are Saying About the Sample Kit
           </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', textAlign: 'left' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem', textAlign: 'left' }}>
             <div style={{ background: '#ffffff', padding: '2rem', borderRadius: 8, border: '1px solid #ebd9c0' }}>
               <div style={{ display: 'flex', color: '#c59b4c', marginBottom: '0.5rem' }}>
                 {[...Array(5)].map((_, i) => <Star key={i} size={15} fill="#c59b4c" color="#c59b4c" />)}

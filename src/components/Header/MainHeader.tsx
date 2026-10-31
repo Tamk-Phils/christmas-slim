@@ -18,7 +18,8 @@ import {
   Moon, 
   Box, 
   HelpCircle, 
-  Phone
+  Phone,
+  Snowflake
 } from 'lucide-react';
 
 interface MainHeaderProps {
@@ -27,7 +28,7 @@ interface MainHeaderProps {
 
 export const MainHeader: React.FC<MainHeaderProps> = ({ products }) => {
   const { cart, openCart, showToast } = useCart();
-  const { glowMode, setGlowMode } = useGlow();
+  const { glowMode, setGlowMode, isSnowing, toggleSnow } = useGlow();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -206,7 +207,7 @@ export const MainHeader: React.FC<MainHeaderProps> = ({ products }) => {
               aria-label="Open Shopping Cart"
             >
               <ShoppingBag className="action-icon" size={20} />
-              <span>Cart</span>
+              <span className="cart-btn-label">Cart</span>
               <span className="badge-count">{totalItems}</span>
             </button>
           </div>
@@ -402,6 +403,28 @@ export const MainHeader: React.FC<MainHeaderProps> = ({ products }) => {
                   className={`mobile-glow-btn ${glowMode === 'night' ? 'is-active' : ''}`}
                 >
                   <Moon size={14} /> Night
+                </button>
+              </div>
+
+              {/* Snowfall Toggle for Mobile */}
+              <div style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#555', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                  <Snowflake size={14} /> Snowfall Effect:
+                </span>
+                <button
+                  onClick={toggleSnow}
+                  style={{
+                    background: isSnowing ? 'var(--color-forest)' : '#eee',
+                    color: isSnowing ? '#fff' : '#666',
+                    padding: '0.3rem 0.75rem',
+                    borderRadius: 20,
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {isSnowing ? 'Active (ON)' : 'OFF'}
                 </button>
               </div>
             </div>

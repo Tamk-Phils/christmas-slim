@@ -50,6 +50,7 @@ export function App() {
 
   return (
     <BrowserRouter>
+
       <ScrollToTop />
       <GlowProvider>
         <CartProvider>

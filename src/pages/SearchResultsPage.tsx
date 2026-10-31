@@ -68,7 +68,7 @@ export const SearchResultsPage: React.FC<SearchResultsPageProps> = ({ products, 
             </Link>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
             {matchingProducts.map(product => (
               <div
                 key={product.id}
@@ -156,7 +156,7 @@ export const SearchResultsPage: React.FC<SearchResultsPageProps> = ({ products, 
             <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: '#143d2f', marginBottom: '1.5rem' }}>
               Matching Styling Articles
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
               {matchingPosts.map(post => (
                 <div key={post.id} style={{ background: '#ffffff', borderRadius: 8, padding: '1.5rem', border: '1px solid #ebd9c0' }}>
                   <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: '#143d2f', margin: '0 0 0.5rem' }}>

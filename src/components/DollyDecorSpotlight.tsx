@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen } from 'lucide-react';
 export const DollyDecorSpotlight: React.FC = () => {
   return (
     <section className="dolly-spotlight" style={{ background: '#91160c', color: '#ffffff', padding: '4.5rem 1rem' }}>
-      <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+      <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'center' }}>
         {/* Real Spotlight Photography */}
         <div style={{ borderRadius: 12, overflow: 'hidden', boxShadow: '0 12px 36px rgba(0,0,0,0.3)' }}>
           <img

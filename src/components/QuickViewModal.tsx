@@ -17,7 +17,7 @@ export const QuickViewModal: React.FC = () => {
           <X size={20} />
         </button>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', padding: '2.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem', padding: '1.5rem' }}>
           <div>
             <img
               src={quickViewProduct.image}
